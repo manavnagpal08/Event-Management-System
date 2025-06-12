@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f1f3f6;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        a.button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        a.button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Admin Panel</h2>
+
+<a href="/create" class="button">➕ Create New Event</a>
+<a href="/logout" class="button" style="background:#dc3545;">Logout</a>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Capacity</th>
+        <th>Actions</th>
+    </tr>
+    {% for event in events %}
+    <tr>
+        <td>{{ event.title }}</td>
+        <td>{{ event.date }}</td>
+        <td>{{ event.start }}</td>
+        <td>{{ event.end }}</td>
+        <td>{{ event.capacity }}</td>
+        <td><a href="/attendees/{{ event.id }}">View Attendees</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

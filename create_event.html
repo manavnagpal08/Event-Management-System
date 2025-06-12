@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create New Event</h2>
+        <form method="POST">
+            <label for="title">Title:</label>
+            <input type="text" name="title" required>
+
+            <label for="description">Description:</label>
+            <textarea name="description" rows="4" required></textarea>
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" required>
+
+            <label for="start">Start Time:</label>
+            <input type="time" name="start" required>
+
+            <label for="end">End Time:</label>
+            <input type="time" name="end" required>
+
+            <label for="capacity">Capacity:</label>
+            <input type="number" name="capacity" min="1" required>
+
+            <button type="submit">Create Event</button>
+        </form>
+        <a href="/admin">← Back to Admin Dashboard</a>
+    </div>
+</body>
+</html>
